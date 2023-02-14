@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'webpack_boilerplate',
     'hotwire_django.tasks',
     'hotwire_django.turbo_drive',
+    'hotwire_django.turbo_frame',
     'bulma',
 ]
 

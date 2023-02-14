@@ -1,0 +1,15 @@
+{% extends 'turbo_frame/base.html' %}
+
+{% block content %}
+    <div class="columns">
+        <div class="column">
+            <h1 class="title">Task List</h1>
+            <div>
+                {% for instance in object_list %}
+                    {% include 'turbo_frame/_task_detail.html' with instance=instance only %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

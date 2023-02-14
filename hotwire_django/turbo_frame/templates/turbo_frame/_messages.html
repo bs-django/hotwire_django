@@ -1,0 +1,5 @@
+{% for message in messages %}
+    <div data-turbo-cache="false" class="notification">
+        {{ message|safe }}
+    </div>
+{% endfor %}

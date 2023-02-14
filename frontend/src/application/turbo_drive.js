@@ -1,4 +1,4 @@
-import "../styles/turbo_drive.scss";
+import "../styles/main.scss";
 
 import "@hotwired/turbo";
 

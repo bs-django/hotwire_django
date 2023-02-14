@@ -1,0 +1,7 @@
+<div class="card p-2 my-3">
+    <a href="{% url 'turbo-frame:task-update' instance.pk %}"
+       class="button is-primary">Edit</a>
+    <a href="{% url 'turbo-frame:task-delete' instance.pk %}"
+       class="button is-primary">Delete</a>
+    {{ instance.due_date|date:"Y-m-d" }}: {{ instance.title }}
+</div>

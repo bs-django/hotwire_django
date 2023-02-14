@@ -21,5 +21,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('turbo-drive/', include('hotwire_django.turbo_drive.urls',
                                  namespace='turbo-drive')),
+    path('turbo-frame/', include('hotwire_django.turbo_frame.urls',
+                                 namespace='turbo-frame')),
     path('admin/', admin.site.urls),
 ]
