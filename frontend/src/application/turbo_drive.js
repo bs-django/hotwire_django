@@ -9,3 +9,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("turbo:load", function () {
     console.log("turbo:load");
 });
+
+document.addEventListener('turbo:before-render', () => {
+    document.querySelector("#weatherwidget-io-js").remove();
+});

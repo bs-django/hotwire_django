@@ -1,4 +1,4 @@
-{% load  webpack_loader static %}
+{% load webpack_loader static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,8 +18,8 @@
     {% include 'turbo_drive/_messages.html' %}
     {% block content %}
     {% endblock %}
+    {% include 'turbo_drive/_weather_widget.html' %}
 </div>
-
 {% block extra_bottom_js %}
 {% endblock %}
 </body>
