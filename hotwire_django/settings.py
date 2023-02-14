@@ -55,7 +55,7 @@ ROOT_URLCONF = 'hotwire_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['hotwire_django/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +122,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = [
+    str(BASE_DIR / "frontend/build"),
+]
+
+WEBPACK_LOADER = {
+    'MANIFEST_FILE': str(BASE_DIR / "frontend/build/manifest.json"),
+}

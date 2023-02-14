@@ -1,12 +1,28 @@
-// If you comment out code below, bootstrap will use red as primary color
-// and btn-primary will become red
-
-// $primary: red;
-
-@import "~bootstrap/scss/bootstrap.scss";
-
-.jumbotron {
-  // should be relative path of the entry scss file
-  background-image: url("../../vendors/images/sample.jpg");
-  background-size: cover;
+// Import a Google Font
+@font-face {
+  font-family: Nunito;
+  src: url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 }
+
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+
+// Update some of Bulma's component variables
+$control-border-width: 2px;
+$input-background-color: $beige-lighter;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "~bulma";
