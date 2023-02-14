@@ -1,0 +1,16 @@
+{% extends 'turbo_drive/base.html' %}
+
+{% block content %}
+    <div class="columns">
+        <div class="column">
+            <h1 class="title">Task List</h1>
+            <ul class="card p-4">
+                {% for instance in object_list %}
+                    <li class="">
+                        {{ instance.due_date|date:"Y-m-d" }}: {{ instance.title }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

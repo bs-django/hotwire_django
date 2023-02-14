@@ -1,0 +1,27 @@
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+               data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a href="{% url 'turbo_drive:task-list' %}" class="navbar-item">
+                    List
+                </a>
+                <a href="{% url 'turbo_drive:task-create' %}" class="navbar-item">
+                    Create
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
