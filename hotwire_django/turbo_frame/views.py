@@ -8,6 +8,10 @@ from hotwire_django.tasks.models import Task
 from hotwire_django.tasks.forms import TaskForm
 
 
+def index_view(request):
+    return render(request, 'turbo_frame/index.html')
+
+
 def list_view(request):
     object_list = Task.objects.all().order_by('-pk')
     context = {

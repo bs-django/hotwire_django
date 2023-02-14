@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import list_view, create_view, update_view, delete_view, detail_view
+from .views import index_view, list_view, create_view, update_view, delete_view, detail_view
 
 app_name = 'turbo_frame'
 
 urlpatterns = [
+    path('', index_view, name='index'),
     path('list/', list_view, name='task-list'),
     path('create/', create_view, name='task-create'),
     path('<int:pk>/', detail_view, name='task-detail'),

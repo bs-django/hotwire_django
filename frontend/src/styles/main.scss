@@ -2,9 +2,9 @@
 $family-sans-serif: "Nunito", sans-serif;
 
 // stylelint-disable no-invalid-position-at-import-rule
-@import "~bulmaswatch/cerulean/variables";
+@import "~bulmaswatch/sandstone/variables";
 @import "~bulma";
-@import "~bulmaswatch/cerulean/overrides";
+@import "~bulmaswatch/sandstone/overrides";
 
 [data-turbo-preview] body {
   opacity: 0.5;
