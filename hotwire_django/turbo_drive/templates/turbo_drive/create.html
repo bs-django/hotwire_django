@@ -1,6 +1,15 @@
 {% extends 'turbo_drive/base.html' %}
 {% load bulma_tags %}
 
+{% block extra_top_js %}
+    <script>
+        console.log('top script')
+    </script>
+    <script>
+        console.log('create page top script.')
+    </script>
+{% endblock %}
+
 {% block content %}
     <div class="columns is-centered">
         <div class="column is-4-desktop">
@@ -11,4 +20,10 @@
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_bottom_js %}
+    <script>
+        console.log('create page extra_bottom_js')
+    </script>
 {% endblock %}

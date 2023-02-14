@@ -5,8 +5,6 @@ from hotwire_django.tasks.models import Task
 
 
 def create_view(request):
-    import time
-    time.sleep(3)
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
@@ -19,8 +17,6 @@ def create_view(request):
 
 
 def list_view(request):
-    import time
-    time.sleep(3)
     object_list = Task.objects.all().order_by('-pk')
     context = {
         'object_list': object_list

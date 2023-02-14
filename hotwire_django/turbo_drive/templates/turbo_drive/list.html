@@ -1,5 +1,14 @@
 {% extends 'turbo_drive/base.html' %}
 
+{% block extra_top_js %}
+    <script>
+        console.log('top script')
+    </script>
+    <script>
+        console.log('list page top script.')
+    </script>
+{% endblock %}
+
 {% block content %}
     <div class="columns">
         <div class="column">
@@ -13,4 +22,10 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_bottom_js %}
+    <script>
+        console.log('list page extra_bottom_js')
+    </script>
 {% endblock %}
