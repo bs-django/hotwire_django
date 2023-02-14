@@ -19,6 +19,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
-    path('turbo-drive/', include('hotwire_django.turbo_drive.urls')),
+    path('turbo-drive/', include('hotwire_django.turbo_drive.urls',
+                                 namespace='turbo-drive')),
     path('admin/', admin.site.urls),
 ]

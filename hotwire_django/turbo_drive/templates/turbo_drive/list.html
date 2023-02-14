@@ -4,13 +4,13 @@
     <div class="columns">
         <div class="column">
             <h1 class="title">Task List</h1>
-            <ul class="card p-4">
+            <div>
                 {% for instance in object_list %}
-                    <li class="">
+                    <div class="card p-2 my-3">
                         {{ instance.due_date|date:"Y-m-d" }}: {{ instance.title }}
-                    </li>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 {% endblock %}

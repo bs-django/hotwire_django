@@ -10,8 +10,9 @@
     {% javascript_pack 'turbo_drive' attrs='defer' %}
 </head>
 <body>
-{% include 'turbo_drive/navbar.html' %}
+{% include 'turbo_drive/_navbar.html' %}
 <div class="container mt-5">
+    {% include 'turbo_drive/_messages.html' %}
     {% block content %}
     {% endblock %}
 </div>

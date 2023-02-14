@@ -5,3 +5,12 @@ $family-sans-serif: "Nunito", sans-serif;
 @import "~bulmaswatch/cerulean/variables";
 @import "~bulma";
 @import "~bulmaswatch/cerulean/overrides";
+
+[data-turbo-preview] body {
+  opacity: 0.5;
+}
+
+.turbo-progress-bar {
+  background: red;
+  height: 5px;
+}
