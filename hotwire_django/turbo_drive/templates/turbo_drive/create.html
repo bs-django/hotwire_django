@@ -1,0 +1,14 @@
+{% extends 'turbo_drive/base.html' %}
+{% load bulma_tags %}
+
+{% block content %}
+    <div class="columns is-centered">
+        <div class="column is-4-desktop">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|bulma }}
+                <button type="submit" class="button is-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

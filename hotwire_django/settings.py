@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webpack_boilerplate',
     'hotwire_django.tasks',
-    'hotwire_django.turbo_drive'
+    'hotwire_django.turbo_drive',
+    'bulma',
 ]
 
 MIDDLEWARE = [
