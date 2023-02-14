@@ -5,11 +5,13 @@
     <div class="columns is-centered">
         <div class="column is-4-desktop">
             <h1 class="title">Create Task</h1>
-            <form method="post">
-                {% csrf_token %}
-                {{ form|bulma }}
-                <button type="submit" class="button is-primary">Submit</button>
-            </form>
+            {% if request.turbo.frame %}
+                <turbo-frame id="{{ request.turbo.frame }}">
+                    {% include 'turbo_frame/form/_create.html' %}
+                </turbo-frame>
+            {% else %}
+                {% include 'turbo_frame/form/_create.html' %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}

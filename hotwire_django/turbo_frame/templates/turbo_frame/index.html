@@ -4,10 +4,12 @@
     <div class="columns is-centered">
         <div class="column is-5-desktop">
             <h1 class="title">Turbo Frame Index Page</h1>
-            <turbo-frame id="task-list">
-                <a href="{% url 'turbo-frame:task-list' %}">
-                    Click me to load
-                </a>
+            <turbo-frame id="task-create" src="{% url 'turbo-frame:task-create' %}">
+                Loading...
+            </turbo-frame>
+            <br>
+            <turbo-frame id="task-list" src="{% url 'turbo-frame:task-list' %}">
+                Loading...
             </turbo-frame>
         </div>
     </div>

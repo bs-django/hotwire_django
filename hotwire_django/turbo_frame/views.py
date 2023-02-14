@@ -1,8 +1,10 @@
 import http
 
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
+from turbo_response import TurboFrame
 
 from hotwire_django.tasks.models import Task
 from hotwire_django.tasks.forms import TaskForm
@@ -26,7 +28,14 @@ def create_view(request):
         if form.is_valid():
             instance = form.save()
             messages.success(request, 'Task created successfully')
-            return redirect(reverse('turbo-frame:task-detail', kwargs={'pk': instance.pk}))
+            if request.turbo.frame:
+                # if the request comes within Turbo Frame
+                response = TurboFrame(
+                    request.turbo.frame,
+                ).template("turbo_frame/_messages.html", {}).response(request)
+                return response
+            else:
+                return redirect(reverse('turbo-frame:task-detail', kwargs={'pk': instance.pk}))
         status = http.HTTPStatus.UNPROCESSABLE_ENTITY
     else:
         status = http.HTTPStatus.OK

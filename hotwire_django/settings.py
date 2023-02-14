@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'hotwire_django.turbo_drive',
     'hotwire_django.turbo_frame',
     'bulma',
+    'turbo_response',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'turbo_response.middleware.TurboMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
