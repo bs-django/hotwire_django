@@ -13,3 +13,12 @@ document.addEventListener("turbo:load", function () {
 document.addEventListener('turbo:before-render', () => {
     document.querySelector("#weatherwidget-io-js").remove();
 });
+
+
+document.addEventListener('turbo:submit-start', (target) => {
+    console.log('turbo:submit-start');
+    console.log(target);
+    // here we can write JS to improve form submission experience
+    // for example: disabling form submit button
+    // or displaying spinner icon
+});

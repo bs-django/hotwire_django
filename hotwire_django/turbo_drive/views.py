@@ -1,3 +1,4 @@
+import http
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from hotwire_django.tasks.forms import TaskForm
@@ -11,9 +12,12 @@ def create_view(request):
             form.save()
             messages.success(request, "Task created successfully")
             return redirect(reverse('turbo-drive:task-list'))
+        status = http.HTTPStatus.UNPROCESSABLE_ENTITY
     else:
+        status = http.HTTPStatus.OK
         form = TaskForm()
-    return render(request, 'turbo_drive/create.html', {'form': form})
+    return render(request, 'turbo_drive/create.html', {'form': form},
+                  status=status)
 
 
 def list_view(request):
