@@ -23,5 +23,7 @@ urlpatterns = [
                                  namespace='turbo-drive')),
     path('turbo-frame/', include('hotwire_django.turbo_frame.urls',
                                  namespace='turbo-frame')),
+    path('stimulus-basic/', include('hotwire_django.stimulus_basic.urls',
+                                 namespace='stimulus-basic')),
     path('admin/', admin.site.urls),
 ]

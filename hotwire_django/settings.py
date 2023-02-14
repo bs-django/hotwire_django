@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'hotwire_django.tasks',
     'hotwire_django.turbo_drive',
     'hotwire_django.turbo_frame',
+    'hotwire_django.stimulus_basic',
     'bulma',
     'turbo_response',
 ]
