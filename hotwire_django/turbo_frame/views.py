@@ -1,6 +1,5 @@
 import http
 
-from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
@@ -49,8 +48,13 @@ def update_view(request, pk):
         form = TaskForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Task updated successfully')
-            return redirect(reverse('turbo-frame:task-detail', kwargs={'pk': instance.pk}))
+            if request.turbo.frame:
+                # if request came from Turbo frame (Inline editing)
+                return redirect(reverse('turbo-frame:task-detail', kwargs={'pk': instance.pk}))
+            else:
+                # if request came from standard page
+                messages.success(request, 'Task updated successfully')
+                return redirect(reverse('turbo-frame:task-detail', kwargs={'pk': instance.pk}))
         status = http.HTTPStatus.UNPROCESSABLE_ENTITY
     else:
         status = http.HTTPStatus.OK
@@ -62,8 +66,12 @@ def delete_view(request, pk):
     instance = get_object_or_404(Task, pk=pk)
     if request.method == 'POST':
         instance.delete()
-        messages.success(request, 'Task deleted successfully')
-        return redirect('turbo-frame:task-list')
+        if request.turbo.frame:
+            response = TurboFrame(f"task-detail-{pk}").render('')
+            return response
+        else:
+            messages.success(request, 'Task deleted successfully')
+            return redirect('turbo-frame:task-list')
     return render(request, 'turbo_frame/delete_page.html', {'instance': instance})
 
 

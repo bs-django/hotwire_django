@@ -1,0 +1,15 @@
+<form action="{% url 'turbo_frame:task-delete' instance.pk %}"
+      method="post">
+    <p class="subtitle has-background-danger-light p-3">
+        Are you sure you want to delete "{{ instance.title }}"?
+    </p>
+    {% csrf_token %}
+    <button type="submit" class="button is-primary">Submit</button>
+    {% if request.turbo.frame %}
+        <a href="{% url 'turbo-frame:task-detail' instance.pk %}"
+           class="button is-danger">Cancel</a>
+    {% else %}
+        <a href="{% url 'turbo-frame:task-list' %}"
+           class="button is-danger">Cancel</a>
+    {% endif %}
+</form>

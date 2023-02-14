@@ -1,0 +1,16 @@
+{% load bulma_tags %}
+
+<form action="{% url 'turbo-frame:task-update' form.instance.pk %}"
+      class="card p-2 has-shadow" method="post">
+    {% csrf_token %}
+    {{ form|bulma }}
+
+    <button type="submit" class="button is-primary">Submit</button>
+    {% if request.turbo.frame %}
+        <a href="{% url 'turbo-frame:task-detail' form.instance.pk %}"
+           class="button is-danger">Cancel</a>
+    {% else %}
+        <a href="{% url 'turbo-frame:task-list' %}"
+           class="button is-danger">Cancel</a>
+    {% endif %}
+</form>

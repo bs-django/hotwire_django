@@ -5,13 +5,13 @@
     <div class="columns is-centered">
         <div class="column is-4-desktop">
             <h1 class="title">Edit Task</h1>
-            <form method="post">
-                {% csrf_token %}
-                {{ form|bulma }}
-                <button type="submit" class="button is-primary">Submit</button>
-                <a href="{% url 'turbo-frame:task-list' %}"
-                   class="button is-danger">Cancel</a>
-            </form>
+            {% if request.turbo.frame %}
+                <turbo-frame id="{{ request.turbo.frame }}">
+                    {% include 'turbo_frame/form/_update.html' %}
+                </turbo-frame>
+            {% else %}
+                {% include 'turbo_frame/form/_update.html' %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
