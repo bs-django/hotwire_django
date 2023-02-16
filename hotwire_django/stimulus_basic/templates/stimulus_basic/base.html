@@ -9,12 +9,10 @@
     <title>Stimulus Basic</title>
     {% stylesheet_pack 'stimulus_basic' attrs='data-turbo-track="reload"' %}
     {% javascript_pack 'stimulus_basic' attrs='data-turbo-track="reload" defer' %}
-
 </head>
 <body>
 {% include 'stimulus_basic/_navbar.html' %}
 <div class="container mt-5">
-    {% include 'turbo_frame/_messages.html' %}
     {% block content %}
     {% endblock %}
 </div>

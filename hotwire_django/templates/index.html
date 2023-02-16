@@ -16,11 +16,15 @@
     <section class="section">
         <div class="columns">
             <div class="column"></div>
-            <div class="column has-background-info-light is-5 p-5">
+            <div class="column has-text-centered has-background-info-light is-5 p-5">
                 <h1 class="title">Hello, world!!</h1>
                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit. Nisi, veritatis.</p>
-                <p><a href="#" class="button is-primary">Learn More</a></p>
+                <div class="is-flex is-align-items-center">
+                    <a href="{% url 'stimulus-basic:counter' %}" class="button is-primary">Simulus Basic</a>
+                    <a href="{% url 'turbo_drive:task-list' %}" class="button is-primary mx-5">Turbo Drive</a>
+                    <a href="{% url 'turbo_frame:index' %}" class="button is-primary">Turbo Frame</a>
+                </div>
                 <div>
                     <img src="{% static 'vendors/images/webpack.png' %}" alt="" class="image">
                 </div>

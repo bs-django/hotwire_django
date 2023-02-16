@@ -4,7 +4,13 @@
     <div class="columns is-centered">
         <div class="columm is-half-desktop">
             <h1 class="title">Counter</h1>
-            <div data-controller="counter"></div>
+            <div data-action="click->counter#increment"
+                 data-controller="counter"></div>
+            <button data-action="click->counter#increment"
+                    class="button is-primary" data-controller="counter">
+            </button>
+            <div data-controller="counter"
+            data-action="click->counter#increment"></div>
         </div>
     </div>
 {% endblock %}
